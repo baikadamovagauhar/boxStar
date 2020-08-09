@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <title>BoxStar</title>
+    <link rel="stylesheet" href="main.css">
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img src="images/logo.png" alt="logo" class="logo">
+            <section class="header-block-list">
+                <div class="header-block">
+                    <img src="images/phone.svg" alt="phone" class="header-block-icon">
+                    <a href="tel:+2028439181" class="header-txt">Contact us</a>
+                </div>
+                <div class="header-block">
+                    <img src="images/debt.svg" alt="estimate" class="header-block-icon">
+                    <a href="" class="header-txt">Free estimate!</a>
+                </div>
+                <div class="header-block">
+                    <img src="images/project.svg" alt="tips" class="header-block-icon">
+                    <a href="" class="header-txt">Moving Tips</a>
+                </div>
+            </section>
+        </div>
+    </header>
+<!--    <section class="nav-bar">-->
+<!--        <a class="nav-bar-txt" href="">Home</a>-->
+<!--        <a class="nav-bar-txt" href="">Services</a>-->
+<!--        <a class="nav-bar-txt" href="">Locations</a>-->
+<!--    </section>-->
+    <div class="container red topBotomBordersOut">
+        <a>HOME</a>
+        <a>SERVICES</a>
+        <a>LOCATIONS</a>
+    </div>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="images/slide01.jpg" class="sliderImg">
+            <div class="text1"><span class="text1-title">BoxStar Moving Services, LLC</span> is dedicated to providing top-quality moving services, storage and moving supplies. We offer moving solutions at competitive prices for local and long distance needs for both residential and commercial clientele. We take pride in our professionally trained crew and would love to be at your service.</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="images/slide02.jpg" class="sliderImg">
+            <div class="text2">
+                <div class="form-style-6">
+                    <h1 class="form-title">BoxStar Moving Services, VA </h1>
+                    <h4 class="form-txt">Licensed, Insured & Bonded DMV Movers</h4>
+                    <form>
+                        <input type="text" name="field1" placeholder="ENTER YOUR NAME" />
+                        <input type="email" name="field2" placeholder="ENTER YOUR EMAIL ADDRESS" />
+                        <input type="tel" name="field3" placeholder="PHONE NUMBER" />
+                        <select>
+                            <option disabled selected>MOVE TYPE</option>
+                            <option value="localMove">Local move</option>
+                            <option value="localDistance">Long Distance Move</option>
+                            <option value="laborHelp">Labor Help</option>
+                        </select>
+
+                        <select onchange="admSelectCheck(this)">
+                            <option disabled selected>WE'RE MOVING YOUR</option>
+                            <option value="house" id="house">House</option>
+                            <option value="apartment" id="apartm">Apartment</option>
+                            <option value="townhouse">Townhouse</option>
+                            <option value="storage">Storage</option>
+                            <option value="office">Office</option>
+                            <option value="single">Single Item</option>
+                            <option value="notListed">Not Listed</option>
+                        </select>
+                        <div id="selected" style="display:none;">
+                            <input type="radio" id="1"
+                                   name="contact" value="mail">
+                            <label for="1">1 Bedroom</label>
+                            <input type="radio" id="2"
+                                   name="contact" value="mail">
+                            <label for="2">2 Bedrooms</label>
+                            <input type="radio" id="3"
+                                   name="contact" value="mail">
+                            <label for="3">3 Bedrooms</label>
+                            <input type="radio" id="4"
+                                   name="contact" value="mail">
+                            <label for="4">4+ Bedrooms</label>
+                        </div>
+
+                        <input type="text" name="field4" placeholder="ORIGIN ZIP CODE" />
+                        <input type="email" name="field5" placeholder="DESTINATION ZIP CODE" />
+                        <input type="date" name="field6" placeholder="YOUR MOVE DATE" />
+                        <input type="submit" value="BUILD MY ESTIMATE" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="images/slide03.jpg" class="sliderImg">
+            <div class="text">Caption Three</div>
+        </div>
+    </div>
+    <br>
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <img src="images/down-arrow.png" alt="" class="arrow">
+
+
+
+    <script>
+        var slideIndex = 0;
+        var isClicked = false;
+        showSlides(slideIndex);
+
+        function currentSlide(n) {
+            isClicked = true;
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            if (isClicked === false) {
+                slideIndex++;
+            }
+            if (slideIndex > slides.length) {slideIndex = 1}
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+
+            setTimeout(showSlides, 8000)
+        }
+
+        function admSelectCheck(nameSelect) {
+            if(nameSelect){
+                selected = document.getElementById("house").value;
+                selected2 = document.getElementById("apartm").value;
+
+                if(selected === nameSelect.value || selected2 === nameSelect.value){
+                    document.getElementById("selected").style.display = "block";
+                }
+                else{
+                    document.getElementById("selected").style.display = "none";
+                }
+            }
+            else{
+                document.getElementById("selected").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
