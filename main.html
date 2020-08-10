@@ -26,22 +26,12 @@
             </section>
         </div>
     </header>
-<!--    <section class="nav-bar">-->
-<!--        <a class="nav-bar-txt" href="">Home</a>-->
-<!--        <a class="nav-bar-txt" href="">Services</a>-->
-<!--        <a class="nav-bar-txt" href="">Locations</a>-->
-<!--    </section>-->
     <div class="container red topBotomBordersOut">
         <a>HOME</a>
         <a>SERVICES</a>
         <a>LOCATIONS</a>
     </div>
     <div class="slideshow-container">
-
-        <div class="mySlides fade">
-            <img src="images/slide01.jpg" class="sliderImg">
-            <div class="text1"><span class="text1-title">BoxStar Moving Services, LLC</span> is dedicated to providing top-quality moving services, storage and moving supplies. We offer moving solutions at competitive prices for local and long distance needs for both residential and commercial clientele. We take pride in our professionally trained crew and would love to be at your service.</div>
-        </div>
 
         <div class="mySlides fade">
             <img src="images/slide02.jpg" class="sliderImg">
@@ -94,56 +84,72 @@
             </div>
         </div>
 
-        <div class="mySlides fade">
-            <img src="images/slide03.jpg" class="sliderImg">
-            <div class="text">Caption Three</div>
-        </div>
+        <section class="ticks">
+            <span class="ticks-title">Arlington VA Movers</span>
+            <span class="ticks-txt">We Tick ALL Your Boxes</span>
+            <div class="ticks-block">
+                <div class="block">
+                    <img src="images/tick.svg" alt="" class="block-img">
+                    <aside class="block-txt">
+                        <p class="block-title">Fully Licensed and Insured</p>
+                        <p class="block-detail">We're licensed and insured so we can solve any challenge and give you peace of mind.</p>
+                    </aside>
+                </div>
+                <div class="block">
+                    <img src="images/tick.svg" alt="" class="block-img">
+                    <aside class="block-txt">
+                        <p class="block-title">Full-Service Movers & Packers</p>
+                        <p class="block-detail">We know all the ins and outs that'll streamline your move. Our teams are background checked and trained into the best Northern Virginia movers and packers.</p>
+                    </aside>
+                </div>
+                <div class="block">
+                    <img src="images/tick.svg" alt="" class="block-img">
+                    <aside class="block-txt">
+                        <p class="block-title">Accurate & Upfront Estimates</p>
+                        <p class="block-detail">Our moving coordinators will make sure moving day is a pleasant experience without any surprises or headaches.</p>
+                    </aside>
+                </div>
+                <div class="block">
+                    <img src="images/tick.svg" alt="" class="block-img">
+                    <aside class="block-txt">
+                        <p class="block-title">World-Class Customer Service</p>
+                        <p class="block-detail">Our helpful representatives will put the cherry on top of  your move. Our award-winning team has serious passion for service and integrity.</p>
+                    </aside>
+                </div>
+                <div class="block">
+                    <img src="images/tick.svg" alt="" class="block-img">
+                    <aside class="block-txt">
+                        <p class="block-title">Fully Equipped Moving Trucks</p>
+                        <p class="block-detail">BoxStar movers is a full-service moving company in Arlington Virginia. Our trucks have every tool and material you'll ever need so you're never sidelined dealing with costly delays on moving day.</p>
+                    </aside>
+                </div>
+                <div class="block">
+                    <img src="images/tick.svg" alt="" class="block-img">
+                    <aside class="block-txt">
+                        <p class="block-title">Stars On Google, HomeAdvisor & Yelp!</p>
+                        <p class="block-detail">We're sure to pay careful attention to your needs. Our company's founding values are based on honesty, integrity and service.</p>
+                    </aside>
+                </div>
+
+            </div>
+        </section>
+<!--        <div class="mySlides fade">-->
+<!--            <img src="images/slide01.jpg" class="sliderImg">-->
+<!--            <div class="text1"><span class="text1-title">BoxStar Moving Services, LLC</span> is dedicated to providing top-quality moving services, storage and moving supplies. We offer moving solutions at competitive prices for local and long distance needs for both residential and commercial clientele. We take pride in our professionally trained crew and would love to be at your service.</div>-->
+<!--        </div>-->
+
+<!--        <div class="mySlides fade">-->
+<!--            <img src="images/slide03.jpg" class="sliderImg">-->
+<!--            <div class="text">Caption Three</div>-->
+<!--        </div>-->
     </div>
     <br>
-    <div class="dots">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
 
-    <img src="images/down-arrow.png" alt="" class="arrow">
+<!--    <img src="images/down-arrow.png" alt="" class="arrow">-->
 
 
 
     <script>
-        var slideIndex = 0;
-        var isClicked = false;
-        showSlides(slideIndex);
-
-        function currentSlide(n) {
-            isClicked = true;
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            if (isClicked === false) {
-                slideIndex++;
-            }
-            if (slideIndex > slides.length) {slideIndex = 1}
-
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-
-            setTimeout(showSlides, 8000)
-        }
-
         function admSelectCheck(nameSelect) {
             if(nameSelect){
                 selected = document.getElementById("house").value;
